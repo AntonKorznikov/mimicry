@@ -10,7 +10,7 @@ import tensorflow as tf
 from torch_mimicry.metrics.inception_model import inception_utils
 
 
-def get_predictions(images, device=None, batch_size=50, print_every=20):
+def get_predictions(images, device=None, batch_size=1, print_every=20):
     """
     Get the output probabilities of images.
 
