@@ -60,8 +60,8 @@ def get_predictions(images, device=None, batch_size=1, print_every=20):
         start_time = time.time()
         for i in range(num_batches):
             batch = images[i * batch_size:(i + 1) * batch_size]
-            print(batch.shape)
-            pred = sess.run(softmax, {'ExpandDims:0': batch})
+            batch = batch[0]
+            pred = sess.run(softmax, {'ExpandDims:0': batch)
             # pred = sess.run(softmax, {'inception_model/ExpandDims:0': batch}) # TODO: Remove when safe. TF2 syntax changes again.
             preds.append(pred)
 
